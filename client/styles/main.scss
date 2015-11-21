@@ -1,0 +1,48 @@
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/_ionic';
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/_ionicons';
+
+@import '../components/menuItem/menuItem.scss';
+
+@import '../components/menuForm/menuForm.scss';
+@import '../components/userAccount/userAccount.scss';
+@import '../components/strainDetails/straindetails';
+
+/** These are overrides for Ionic */
+html {
+  overflow: visible;
+  touch-action: initial;
+}
+
+body {
+  line-height: 1.4;
+  overflow: visible;
+  -webkit-user-drag: initial;
+  -webkit-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+}
+
+/**
+* Main Styles
+*/
+.scroll {
+  height: 100%;
+}
+.content-wrapper {
+  height: 100%;
+  overflow: auto;
+  margin-top: 44px;
+}
+
+.hidden {
+  display: none;
+}
+
+/**
+* Utility Styles
+*/
+
+.pull-right {
+  float: right;
+}

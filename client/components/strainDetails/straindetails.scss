@@ -1,0 +1,21 @@
+.c-strain-card {
+  margin: 0;
+  padding: 0;
+  Transform: scaleY(0);
+  Transition: transform ease 250ms;
+  transform-origin: top;
+  position:absolute;
+}
+
+.isActive .c-strain-card {
+  Transform: scaleY(1);
+  position: relative;
+}
+
+.list:last-child.c-strain-card {
+  margin-bottom: 0;
+}
+
+.rating {
+  max-height: 1em;
+}

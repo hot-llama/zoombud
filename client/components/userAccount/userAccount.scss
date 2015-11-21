@@ -1,0 +1,12 @@
+#login-buttons {
+  position: absolute;
+  right: 5px;
+}
+
+#login-buttons a, .accounts-dialog a {
+  text-decoration: none;
+}
+
+#login-sign-in-link {
+  @extend .button;
+}

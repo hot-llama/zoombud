@@ -1,0 +1,19 @@
+.menuItem.isActive {
+    .ion-chevron-down {
+        display: inline-block;
+        Transform: rotate(180deg);
+    }
+}
+
+.plus-button {
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    right: 16px;
+    min-width: auto;
+    min-height: auto;
+    line-height: 1em;
+    border: 0;
+    padding: 0 0;
+    font-size: 1.25em;
+}
