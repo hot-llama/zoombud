@@ -1,0 +1,260 @@
+{
+  "data": [
+    {
+      "name": "sour diesel",
+      "type": "sativa",
+      "category": "flowers",
+      "price": [
+        [
+          50,
+          "7.0"
+        ],
+        [
+          95,
+          "14.0"
+        ],
+        [
+          185,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "qrazy train",
+      "type": "hybrid",
+      "category": "flowers",
+      "price": [
+        [
+          50,
+          "7.0"
+        ],
+        [
+          95,
+          "14.0"
+        ],
+        [
+          185,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "cinex",
+      "type": "sativa",
+      "category": "flowers",
+      "price": [
+        [
+          60,
+          "7.0"
+        ],
+        [
+          110,
+          "14.0"
+        ],
+        [
+          210,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "alaskan thunderfuck",
+      "type": "sativa",
+      "category": "flowers",
+      "price": [
+        [
+          60,
+          "7.0"
+        ],
+        [
+          110,
+          "14.0"
+        ],
+        [
+          210,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "girl scout cookies",
+      "type": "hybrid",
+      "category": "flowers",
+      "price": [
+        [
+          70,
+          "7.0"
+        ],
+        [
+          130,
+          "14.0"
+        ],
+        [
+          250,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "cinex",
+      "type": "sativa",
+      "category": "flowers",
+      "price": [
+        [
+          80,
+          "7.0"
+        ],
+        [
+          150,
+          "14.0"
+        ],
+        [
+          290,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "Blackberry Kush",
+      "formfactor": "cartridge",
+      "type": "indica",
+      "category": "concentrates",
+      "price": [
+        [
+          40,
+          "7.0"
+        ],
+        [
+          110,
+          "14.0"
+        ],
+        [
+          200,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "UK Cheese",
+      "formfactor": "cartridge",
+      "type": "indica",
+      "category": "concentrates",
+      "price": [
+        [
+          40,
+          "7.0"
+        ],
+        [
+          110,
+          "14.0"
+        ],
+        [
+          200,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "Blue Dream",
+      "formfactor": "cartridge",
+      "type": "hybrid",
+      "category": "concentrates",
+      "price": [
+        [
+          40,
+          "7.0"
+        ],
+        [
+          110,
+          "14.0"
+        ],
+        [
+          200,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "plush berry",
+      "formfactor": "c02",
+      "type": "hybrid",
+      "category": "concentrates",
+      "price": [
+        [
+          35,
+          "7.0"
+        ],
+        [
+          100,
+          "14.0"
+        ],
+        [
+          200,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "Ken's OG x OJ Kush",
+      "formfactor": "amber",
+      "type": "sativa",
+      "category": "concentrates",
+      "price": [
+        [
+          35,
+          "7.0"
+        ],
+        [
+          100,
+          "14.0"
+        ],
+        [
+          200,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "blue dream x Super Lemon Haze",
+      "formfactor": "amber",
+      "type": "indica",
+      "category": "concentrates",
+      "price": [
+        [
+          35,
+          "7.0"
+        ],
+        [
+          100,
+          "14.0"
+        ],
+        [
+          200,
+          "28.0"
+        ]
+      ]
+    },
+    {
+      "name": "Cannabee Gummy Bears",
+      "type": "Rick Simpson Oil",
+      "category": "edibles",
+      "price": [
+        [
+          20,
+          "Pouch"
+        ]
+      ]
+    },
+    {
+      "name": "High Chews",
+      "type": "Unknown",
+      "category": "edibles",
+      "price": [
+        [
+          30,
+          "Pouch"
+        ]
+      ]
+    }
+  ]
+}
