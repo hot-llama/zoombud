@@ -10,7 +10,6 @@ MenuItem = React.createClass({
 
   componentDidMount() {
     var price = _.first(this.props.data.price[0]);
-    console.log(this.props.data.price[0][0]);
     var qty = this.props.data.price[0][1];
     this._updateOnChange(`${price} / ${qty} (g)`);
   },
@@ -44,7 +43,6 @@ MenuItem = React.createClass({
 					<div className="input-label" onClick={this._handleClick}>{this.props.data.name} <span
 						className="icon ion-chevron-down"></span></div>
 					<MenuForm onValueChange={this._updateOnChange} dataPrice={this.props.data.price}/>{this.state.selected}
-          <button className="plus-button pull-right ion-plus-circled button button-outline button-balanced"></button>
         </label>
 				<StrainDetails dataType={this.props.data.type} dataDetails={this.state.strainDetails}/>
 			</div>
