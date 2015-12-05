@@ -17,7 +17,7 @@ MenuForm = React.createClass({
         }
     },
 
-    _onChangeHandler(e) {
+    onChangeSize(e) {
       var self = this;
       this.setState({size: e.target.value}, function(){
         self.props.onValueChange(self.state.size);
@@ -42,7 +42,7 @@ MenuForm = React.createClass({
             <label className="item item-input">
                 <input type="text" placeholder="Qty" ref="qtyInput" onChange={this.onChangeQty}  />
             </label>
-            <select className="menu-select" onChange={this._onChangeHandler} value={this.state.value}>
+            <select className="menu-select" onChange={this.onChangeSize} value={this.state.value}>
                 {this.props.dataPrice.map(function (result, id) {
                    return <option key={id}>{result[0]} / {result[1]} (g)</option>
                 })}
