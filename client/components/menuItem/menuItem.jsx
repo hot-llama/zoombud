@@ -42,7 +42,7 @@ MenuItem = React.createClass({
 				<label className={`item item-input item-select`}>
 					<div className="input-label" onClick={this._handleClick}>{this.props.data.name} <span
 						className="icon ion-chevron-down"></span></div>
-					<MenuForm onValueChange={this._updateOnChange} dataPrice={this.props.data.price}/>{this.state.selected}
+					<MenuForm onValueChange={this._updateOnChange} dataPrice={this.props.data.price}/>
         </label>
 				<StrainDetails dataType={this.props.data.type} dataDetails={this.state.strainDetails}/>
 			</div>

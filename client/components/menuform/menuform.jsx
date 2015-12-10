@@ -6,10 +6,9 @@ MenuForm = React.createClass({
 
       return {
           qty: "1",
-          size: [price, qty]
+          size: `${price} / ${qty}`
       };
     },
-
 
     getDefaultProps() {
         return {
@@ -44,7 +43,7 @@ MenuForm = React.createClass({
             </label>
             <select className="menu-select" onChange={this.onChangeSize} value={this.state.value}>
                 {this.props.dataPrice.map(function (result, id) {
-                   return <option key={id}>{result[0]} / {result[1]} (g)</option>
+                   return <option key={id}>{result[0]} / {result[1]}</option>
                 })}
             </select>
                 <button className="plus-button pull-right ion-plus-circled button button-outline button-balanced" onClick={this.orderSubmitHandler}></button>
