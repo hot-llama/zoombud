@@ -37,7 +37,7 @@ MenuForm = React.createClass({
 
     render() {
         return (
-            <div>
+            <div className="menuForm">
             <label className="item item-input">
                 <input type="text" placeholder="Qty" ref="qtyInput" onChange={this.onChangeQty}  />
             </label>

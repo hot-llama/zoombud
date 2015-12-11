@@ -1,7 +1,13 @@
 .item-select select.menu-select {
-  right: 30px;
+  position: relative;
 }
 
 .item-select:after {
   right: 52px;
+  position: relative;
+}
+
+.menuForm {
+  align-self: flex-end;
+  display: flex;
 }

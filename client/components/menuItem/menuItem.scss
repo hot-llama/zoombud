@@ -1,3 +1,9 @@
+.menuItem .item {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
 .menuItem.isActive {
     .ion-chevron-down {
         display: inline-block;
@@ -5,8 +11,13 @@
     }
 }
 
+.input-label {
+    max-width: auto;
+    display: flex;
+    flex: 1;
+}
 .plus-button {
-    position: absolute;
+    //position: absolute;
     top: 50%;
     margin-top: -12px;
     right: 16px;
