@@ -6,7 +6,7 @@ MenuForm = React.createClass({
 
     return {
       qty: "1",
-      size: [price,qty]
+      size: [price, qty]
     };
   },
 
@@ -25,7 +25,11 @@ MenuForm = React.createClass({
 
   onChangeSize(e) {
     var self = this;
-    this.setState({size: _.words(e.target.value)}, function () {
+    var option = _.words(_.trim(e.target.value, '(g)'));
+    var orderSize = _.map(option, _.parseInt);
+
+
+    this.setState({size: orderSize}, function () {
       self.props.onValueChange(self.state.size);
     });
   },
