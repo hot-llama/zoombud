@@ -30,6 +30,11 @@ MenuForm = React.createClass({
   orderSubmitHandler(e) {
     e.preventDefault();
     console.log(this.state.qty, "-", this.state.size);
+
+    Session.set('order', {
+      qty: this.state.qty,
+      size: this.state.size
+    });
   },
 
   render() {
