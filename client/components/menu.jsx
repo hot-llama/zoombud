@@ -48,10 +48,12 @@ Menu = React.createClass({
 			<div className="padding ionic-body">
         {this.state.modal}
         <MenuHeader />
+
 				<div className="content-wrapper">
 					<div className="content">
 						<div className="row">
 							<div className="col">
+								<button onClick={this.ionModal.bind(null, this)}>Test</button>
 								<MenuList menu={menu} cart={cart} />
 							</div>
 						</div>

@@ -3,7 +3,7 @@ MenuHeader = React.createClass({
         return (
             <div className="bar bar-header">
                 <button className="button icon ion-navicon"></button>
-                <h1 className="title">Zoombud</h1>
+                <h1 className="title" >Zoombud</h1>
                 <UserAccount  />
             </div>
     )

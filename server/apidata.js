@@ -1,5 +1,5 @@
-Meteor.publish('Menu', function () {
-	return MenuData.find(); // Publishes the data
+Meteor.publish('Orders', function () {
+	return Orders.find(); // Publishes the data
 }); // end publish
 
 Meteor.methods({
