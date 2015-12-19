@@ -3,8 +3,8 @@ MenuButton = React.createClass({
    * Submits order to twilio service.
    */
   submitOrder() {
-    var bobo = Session.get('order');
-    console.log(bobo);
+    let order = Orders.findOne({}, {sort: {dateOrdered: -1}});
+    consuela.log(order);
   },
 
   render() {

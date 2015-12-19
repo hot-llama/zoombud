@@ -30,8 +30,9 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
-    console.log(Meteor.userId());
+    console.log('added to cart');
     Orders.insert({
+      dateOrdered: Date.now(),
       userId: Meteor.userId(),
       qty: this.state.qty,
       size: this.state.size

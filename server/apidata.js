@@ -17,14 +17,18 @@ Meteor.methods({
 		return HTTP.call('GET', 'http://localhost:3000/data');
 	},
 
-	sendOrder() {
+	sendOrder(name, qty, size, addr) {
+
 		return HTTP.call(
 			"POST",
 			`https://api.twilio.com/2010-04-01/Accounts/${Meteor.settings.TWILIO_ACCOUNT_SID}/Messages`, {
 				params: {
 					From: Meteor.settings.TWILIO_NUMBER,
-					To: "",
-					Body: "Hi! I'm sending from a webapp!!"
+					To: "206-250-2493",
+					Body: `Hi I'm ${name} and I'd like to place an order of:
+								${qty}, ${size}
+								My address is:
+								${addr}`
 				},
 				// Set your credentials as environment variables
 				// so that they are not loaded on the client
