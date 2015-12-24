@@ -3,7 +3,6 @@ MenuForm = React.createClass({
   getInitialState() {
     var price = _.first(this.props.dataPrice[0]);
     var qty = this.props.dataPrice[0][1];
-    Meteor.subscribe('Orders');
 
     return {
       qty: "1",
@@ -30,13 +29,12 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
-    console.log('added to cart');
-    Orders.insert({
-      dateOrdered: Date.now(),
-      userId: Meteor.userId(),
-      qty: this.state.qty,
-      size: this.state.size
-    });
+    console.log(`${this.state.qty} | ${this.state.size}`);
+
+    var qty = this.state.qty;
+    var size = this.state.size;
+
+    Meteor.call('addCartItem', qty, size);
   },
 
   render() {

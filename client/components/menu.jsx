@@ -1,11 +1,9 @@
 Menu = React.createClass({
-
 	mixins: [ReactMeteorData],
 
 	getMeteorData() {
 		return {
-			strainMenu: 'hello',
-      cart: []
+      cart: ['booboo']
 		}
 	},
 
@@ -23,7 +21,6 @@ Menu = React.createClass({
 			}
 			return this.setState({menu: menu.data})
 		});
-    //Meteor.call('sendOrder');
 	},
 
   ionModal(tab) {
@@ -59,7 +56,7 @@ Menu = React.createClass({
 						</div>
 						<div className="row">
 							<div className="col">
-								<MenuButton btnClass={'button button-balanced button-full'} btnType={'submit'} btnText={'Submit'}/>
+								<MenuButton btnClass={'button button-balanced button-full'} btnType={'submit'} btnText={'Submit'} order={this.data.cart}/>
 							</div>
 						</div>
 					</div>
