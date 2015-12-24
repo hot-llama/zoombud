@@ -2,9 +2,20 @@ Menu = React.createClass({
 	mixins: [ReactMeteorData],
 
 	getMeteorData() {
+    Meteor.subscribe("Orders");
+
 		return {
-      cart: ['booboo']
-		}
+      cart: [{
+        userId: Meteor.userId(),
+        name: "Dave",
+        address: "123 Fat St. Town",
+        order: [{
+          strain: null,
+          qty: 1,
+          size: []
+        }]
+      }]
+		};
 	},
 
 	getInitialState() {
@@ -39,7 +50,7 @@ Menu = React.createClass({
 
   render() {
 		var menu = this.state.menu;
-    var cart = this.state.cart;
+    var cart = this.data.cart;
 
 		return (
 			<div className="padding ionic-body">

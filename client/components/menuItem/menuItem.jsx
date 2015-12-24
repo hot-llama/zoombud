@@ -11,21 +11,21 @@ MenuItem = React.createClass({
   componentDidMount() {
     var price = _.first(this.props.data.price[0]);
     var qty = this.props.data.price[0][1];
-    this._updateOnChange(`${price} / ${qty} (g)`);
+    this.updateOnChange(`${price} / ${qty} (g)`);
   },
 
-  _updateOnChange(value) {
+  updateOnChange(value) {
     this.setState({selected: value})
   },
 
-	_handleClick() {
+	handleClick() {
 		this.setState({
 			isToggled: !this.state.isToggled
 		});
-		return this._getStrainDetails();
+		return this.getStrainDetails();
 	},
 
-	_getStrainDetails() {
+	getStrainDetails() {
 		Meteor.call('getDetails', 'sour-diesel', (err, details) => {
 			if (err) {
 				throw new Meteor.Error('Details are a bitch', err);
@@ -36,13 +36,14 @@ MenuItem = React.createClass({
 
 	render() {
 		var toggledClass = this.state.isToggled ? 'isActive' : '';
+    var orderCart = this.props.cart;
 
 		return (
 			<div className={`menuItem ${toggledClass}`}>
 				<label className={`item item-input item-select`}>
-					<div className="input-label" onClick={this._handleClick}>{this.props.data.name} <span
+					<div className="input-label" onClick={this.handleClick}>{this.props.data.name} <span
 						className="icon ion-chevron-down"></span></div>
-					<MenuForm onValueChange={this._updateOnChange} dataPrice={this.props.data.price}/>
+					<MenuForm onValueChange={this.updateOnChange} dataPrice={this.props.data.price} strainName={this.props.data.name} cart={orderCart}/>
         </label>
 				<StrainDetails dataType={this.props.data.type} dataDetails={this.state.strainDetails}/>
 			</div>
