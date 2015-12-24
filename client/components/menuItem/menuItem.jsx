@@ -1,12 +1,12 @@
 MenuItem = React.createClass({
 
-	getInitialState() {
-		return {
-			isToggled: false,
-			strainDetails: [],
-      selected: "nothing selected"
-		}
-	},
+  getInitialState() {
+    return {
+      isToggled    : false,
+      strainDetails: [],
+      selected     : "nothing selected"
+    }
+  },
 
   componentDidMount() {
     var price = _.first(this.props.data.price[0]);
@@ -18,35 +18,36 @@ MenuItem = React.createClass({
     this.setState({selected: value})
   },
 
-	handleClick() {
-		this.setState({
-			isToggled: !this.state.isToggled
-		});
-		return this.getStrainDetails();
-	},
+  handleClick() {
+    this.setState({
+      isToggled: !this.state.isToggled
+    });
+    return this.getStrainDetails();
+  },
 
-	getStrainDetails() {
-		Meteor.call('getDetails', 'sour-diesel', (err, details) => {
-			if (err) {
-				throw new Meteor.Error('Details are a bitch', err);
-			}
-			this.state.isToggled ? this.setState({strainDetails: details}) : this.setState({strainDetails: ''});
-		});
-	},
+  getStrainDetails() {
+    Meteor.call('getDetails', 'sour-diesel', (err, details) => {
+      if (err) {
+        throw new Meteor.Error('Details are a bitch', err);
+      }
+      this.state.isToggled ? this.setState({strainDetails: details}) : this.setState({strainDetails: ''});
+    });
+  },
 
-	render() {
-		var toggledClass = this.state.isToggled ? 'isActive' : '';
+  render() {
+    var toggledClass = this.state.isToggled ? 'isActive' : '';
     var orderCart = this.props.cart;
 
-		return (
-			<div className={`menuItem ${toggledClass}`}>
-				<label className={`item item-input item-select`}>
-					<div className="input-label" onClick={this.handleClick}>{this.props.data.name} <span
-						className="icon ion-chevron-down"></span></div>
-					<MenuForm onValueChange={this.updateOnChange} dataPrice={this.props.data.price} strainName={this.props.data.name} cart={orderCart}/>
+    return (
+      <div className={`menuItem ${toggledClass}`}>
+        <label className={`item item-input item-select`}>
+          <div className="input-label" onClick={this.handleClick}>{this.props.data.name} <span
+            className="icon ion-chevron-down"> </span></div>
+          <MenuForm onValueChange={this.updateOnChange} dataPrice={this.props.data.price}
+                    strainName={this.props.data.name} cart={orderCart}/>
         </label>
-				<StrainDetails dataType={this.props.data.type} dataDetails={this.state.strainDetails}/>
-			</div>
-		)
-	}
-})
+        <StrainDetails dataType={this.props.data.type} dataDetails={this.state.strainDetails}/>
+      </div>
+    )
+  }
+});

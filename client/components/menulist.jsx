@@ -1,6 +1,6 @@
 MenuList = React.createClass({
   render() {
-    orderCart = this.props.cart;
+    var orderCart = this.props.cart;
 
     return (
       <div className="list">
@@ -10,4 +10,4 @@ MenuList = React.createClass({
       </div>
     )
   }
-})
+});

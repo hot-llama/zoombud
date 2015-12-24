@@ -17,13 +17,14 @@ Meteor.methods({
     return HTTP.call('GET', 'http://localhost:3000/data');
   },
 
-  addCartItem(qty, size) {
+  addCartItem(qty, size, strain, cart) {
     //Orders.insert({
     //  dateOrdered: Date.now(),
     //  userId: Meteor.userId(),
     //  qty: qty,
     //  size: size
     //});
+    console.log(qty, size, strain, cart);
   },
 
   sendOrder(name, qty, size, addr) {

@@ -5,17 +5,14 @@ Menu = React.createClass({
     Meteor.subscribe("Orders");
 
 		return {
-      cart: [{
+      cart: {
         userId: Meteor.userId(),
         name: "Dave",
-        address: "123 Fat St. Town",
-        order: [{
-          strain: null,
-          qty: 1,
-          size: []
-        }]
-      }]
-		};
+        address: "123 fun st.",
+        order: []
+      }
+    }
+		;
 	},
 
 	getInitialState() {

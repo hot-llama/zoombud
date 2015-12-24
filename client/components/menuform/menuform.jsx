@@ -5,11 +5,11 @@ MenuForm = React.createClass({
     var qty = this.props.dataPrice[0][1];
 
     return {
-      qty: "1",
+      qty : "1",
       size: [price, qty]
     };
   },
-  
+
   onChangeQty(e) {
     var self = this;
     this.setState({qty: e.target.value}, function () {
@@ -29,12 +29,11 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
-    console.log(`${this.state.qty} | ${this.state.size}`);
-
-    var qty = this.state.qty;
-    var size = this.state.size;
-
-    Meteor.call('addCartItem', qty, size);
+    return this.props.cart.order.push({
+      strain: this.props.strainName,
+      qty: this.state.qty,
+      size: this.state.size
+    });
   },
 
   render() {
@@ -53,4 +52,4 @@ MenuForm = React.createClass({
       </div>
     )
   }
-})
+});
