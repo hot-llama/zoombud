@@ -11,7 +11,8 @@ MenuButton = React.createClass({
 
   render() {
     return (
-      <button className={this.props.btnClass} type={this.props.btnType} onClick={this.submitOrder}>{this.props.btnText}</button>
+      <a href={this.props.route} className={this.props.btnClass} type={this.props.btnType}>{this.props.btnText}
+      </a>
     )
   }
 })

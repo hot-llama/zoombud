@@ -64,7 +64,7 @@ Menu = React.createClass({
 						</div>
 						<div className="row">
 							<div className="col">
-								<MenuButton btnClass={'button button-balanced button-full'} btnType={'submit'} btnText={'Submit'} order={this.data.cart}/>
+								<MenuButton btnClass={'button button-balanced button-full'} btnType={'submit'} btnText={'Submit'} order={this.data.cart} route="/order"/>
 							</div>
 						</div>
 					</div>
