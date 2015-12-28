@@ -26,3 +26,5 @@ meteoric:ionicons-sass
 fourseven:scss@=3.2.0
 accounts-password
 accounts-ui
+kadira:flow-router
+kadira:react-layout
