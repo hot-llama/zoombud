@@ -4,7 +4,7 @@ MenuHeader = React.createClass({
       <div className="bar bar-header">
         <UserAccount  />
         <h1 className="title">Zoombud</h1>
-        <button className="button icon ion-happy-outline bar-header__icon"></button>
+        <a href="/order" className="button icon ion-happy-outline bar-header__icon"> </a>
       </div>
     )
   }
