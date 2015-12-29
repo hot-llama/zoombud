@@ -1,10 +1,21 @@
 #login-buttons {
-  position: absolute;
-  right: 5px;
+  //position: absolute;
+  //right: 5px;
+  display: block;
+  padding-left: 0.5em;
+}
+
+#login-dropdown-list {
+  left: 0.7em;
+  top: 2.9em;
 }
 
 #login-buttons a, .accounts-dialog a {
   text-decoration: none;
+}
+
+#login-buttons .login-close-text {
+  float: right;
 }
 
 #login-sign-in-link {
