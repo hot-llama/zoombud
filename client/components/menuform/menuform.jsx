@@ -29,6 +29,7 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
+    console.log(this.props.cart);
     return this.props.cart.order.push({
       strain: this.props.strainName,
       qty: this.state.qty,

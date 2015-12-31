@@ -3,6 +3,11 @@ Meteor.publish('Orders', function () {
 }); // end publish
 
 Meteor.methods({
+  /**
+   * Gets more details about the strain from leafly
+   * @param {string} strainName - name of strain needed
+   * @returns {*}
+   */
   getDetails(strainName) {
     let leaflyDb = HTTP.call('GET', `http://data.leafly.com/strains/${_.kebabCase(strainName)}`, {
       headers: {
@@ -13,10 +18,22 @@ Meteor.methods({
     return leaflyDb.data;
   },
 
+  /**
+   * Calls the database for the Menu
+   * @returns {any}
+   */
   getMenu() {
     return HTTP.call('GET', 'http://localhost:3000/data');
   },
 
+  /**
+   * Inserts the order into to the database.
+   *
+   * @param qty
+   * @param size
+   * @param strain
+   * @param cart
+   */
   addCartItem(qty, size, strain, cart) {
     //Orders.insert({
     //  dateOrdered: Date.now(),
@@ -56,3 +73,8 @@ Meteor.methods({
     );
   }
 });
+
+/**
+ * Connects app to the Kadira perf monitoring
+ */
+Kadira.connect(Meteor.settings.KADIRA_ID, Meteor.settings.KADIRA_KEY);
