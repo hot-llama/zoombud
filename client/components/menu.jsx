@@ -1,19 +1,4 @@
 Menu = React.createClass({
-	mixins: [ReactMeteorData],
-
-	getMeteorData() {
-    Meteor.subscribe("Orders");
-
-		return {
-      cart: {
-        userId: Meteor.userId(),
-        name: "Dave",
-        address: "123 fun st.",
-        order: []
-      }
-    }
-		;
-	},
 
 	getInitialState() {
 		return {
@@ -37,17 +22,15 @@ Menu = React.createClass({
         <IonModal>
           <div className="h1 title">{tab}</div>
           <button onClick={ () => this.setState({modal:false}) } className="button button-icon active">
-            <i className="icon ion-ios-close-empty"></i>
+            <i className="icon ion-ios-close-empty"> </i>
           </button>
         </IonModal>
       )
     })
   },
 
-
   render() {
 		var menu = this.state.menu;
-    var cart = this.data.cart;
 
 		return (
 			<div className="padding ionic-body">
@@ -59,12 +42,12 @@ Menu = React.createClass({
 						<div className="row">
 							<div className="col">
 								<button onClick={this.ionModal.bind(null, this)}>Test</button>
-								<MenuList menu={menu} cart={cart} />
+								<MenuList menu={menu} />
 							</div>
 						</div>
 						<div className="row">
 							<div className="col">
-								<MenuButton btnClass={'button button-balanced button-full'} btnType={'submit'} btnText={'Submit'} order={this.data.cart} route="/order"/>
+								<MenuButton btnClass={'button button-balanced button-full'} btnType={'submit'} btnText={'Submit'} route="/order"/>
 							</div>
 						</div>
 					</div>
@@ -72,4 +55,4 @@ Menu = React.createClass({
 			</div>
 		)
 	}
-})
+});

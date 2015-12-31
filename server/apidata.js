@@ -2,6 +2,10 @@ Meteor.publish('Orders', function () {
   return Orders.find(); // Publishes the data
 }); // end publish
 
+Meteor.publish('Cart', function() {
+  return Cart.find(); //Publishes Cart
+});
+
 Meteor.methods({
   /**
    * Gets more details about the strain from leafly
@@ -26,22 +30,20 @@ Meteor.methods({
     return HTTP.call('GET', 'http://localhost:3000/data');
   },
 
+
   /**
-   * Inserts the order into to the database.
-   *
-   * @param qty
-   * @param size
-   * @param strain
-   * @param cart
+   * Adds item to cart collection
+   * @param qty - quantity of awesome
+   * @param size - amount of awesome
+   * @param strain - strain name of item
    */
-  addCartItem(qty, size, strain, cart) {
-    //Orders.insert({
-    //  dateOrdered: Date.now(),
-    //  userId: Meteor.userId(),
-    //  qty: qty,
-    //  size: size
-    //});
-    console.log(qty, size, strain, cart);
+  addCartItem(qty, size, strain) {
+    Cart.insert({
+      userId: Meteor.userId(),
+      strain: strain,
+      qty: qty,
+      size: size
+    });
   },
 
   sendOrder(name, qty, size, addr) {

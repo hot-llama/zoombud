@@ -1,11 +1,10 @@
 MenuList = React.createClass({
-  render() {
-    var orderCart = this.props.cart;
 
+  render() {
     return (
       <div className="list">
         {this.props.menu.map(function (result, id) {
-          return <MenuItem key={id} data={result} cart={orderCart}/>
+          return <MenuItem key={id} data={result} />
         })}
       </div>
     )

@@ -1,18 +1,28 @@
 MenuForm = React.createClass({
 
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    let cart = Meteor.subscribe('Cart');
+
+    return {cart};
+  },
+
   getInitialState() {
     var price = _.first(this.props.dataPrice[0]);
     var qty = this.props.dataPrice[0][1];
 
     return {
-      qty : "1",
+      qty : 1,
       size: [price, qty]
     };
   },
 
   onChangeQty(e) {
-    var self = this;
-    this.setState({qty: e.target.value}, function () {
+    let self = this;
+    let qty = _.parseInt(e.target.value, 10)
+
+    this.setState({qty: qty}, function () {
       self.props.onValueChange(self.state.qty);
     });
   },
@@ -29,12 +39,13 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
-    console.log(this.props.cart);
-    return this.props.cart.order.push({
-      strain: this.props.strainName,
-      qty: this.state.qty,
-      size: this.state.size
-    });
+    console.log(this.state.qty, this.state.size);
+
+    Meteor.call('addCartItem',
+      this.state.qty,
+      this.state.size,
+      this.props.strainName
+    );
   },
 
   render() {
