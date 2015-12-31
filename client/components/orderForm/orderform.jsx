@@ -1,5 +1,14 @@
 OrderForm = React.createClass({
+  mixins: [ReactMeteorData],
+
+  getMeteorData() {
+    return {
+      cart: Cart.find({}).fetch()
+    }
+  },
+
   render() {
+    {console.log(this.data.cart)}
     return (
       <div className="padding ionic-body">
         <MenuHeader />
