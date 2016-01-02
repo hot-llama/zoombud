@@ -39,12 +39,14 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
-    console.log(this.state.qty, this.state.size);
 
-    Meteor.call('addCartItem',
-      this.state.qty,
-      this.state.size,
-      this.props.strainName
+
+    cartItem.set('order',
+      {
+        qty: this.state.qty,
+        size: this.state.size,
+        strainName: this.props.strainName
+      }
     );
   },
 
