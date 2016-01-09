@@ -41,11 +41,11 @@ MenuForm = React.createClass({
     e.preventDefault();
 
     cartItem.push(
-      [
-        this.state.qty,
-        this.state.size,
-        this.props.strainName
-      ]
+        {
+          qty: this.state.qty,
+          size: this.state.size,
+          strainName: this.props.strainName
+        }
     );
 
 

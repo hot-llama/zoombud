@@ -24,7 +24,9 @@ OrderForm = React.createClass({
           <div className="row">
             <div className="col">
               <ul className="list">
-                <li>{cart}</li>
+                {cart.map(function (result, id) {
+                  return <li key={id}>{result.strainName}</li>
+                })}
               </ul>
             </div>
           </div>
