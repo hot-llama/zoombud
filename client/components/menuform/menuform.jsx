@@ -40,14 +40,15 @@ MenuForm = React.createClass({
   addToCart(e) {
     e.preventDefault();
 
-
-    cartItem.set('order',
-      {
-        qty: this.state.qty,
-        size: this.state.size,
-        strainName: this.props.strainName
-      }
+    cartItem.push(
+      [
+        this.state.qty,
+        this.state.size,
+        this.props.strainName
+      ]
     );
+
+
   },
 
   render() {

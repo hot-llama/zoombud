@@ -1,25 +1,18 @@
 OrderForm = React.createClass({
 
   getInitialState() {
-    let test = cartItem.get('order');
-    let orderCart = [];
-    let orderObject = _.assign({}, test);
 
-    orderCart.push(orderObject);
-
-    console.log(orderCart);
+    console.log(cartItem);
 
     return {
-      cartData: test
+      data: cartItem
     }
 
   },
 
-
-
   render() {
 
-    let cart = this.state.cartData;
+    const cart = this.state.data;
 
     return (
       <div className="padding ionic-body">
@@ -31,7 +24,7 @@ OrderForm = React.createClass({
           <div className="row">
             <div className="col">
               <ul className="list">
-
+                <li>{cart}</li>
               </ul>
             </div>
           </div>
