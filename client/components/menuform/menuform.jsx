@@ -54,9 +54,6 @@ MenuForm = React.createClass({
   render() {
     return (
       <div className="menuForm">
-        <label className="item item-input">
-          <input type="text" placeholder="Qty" ref="qtyInput" onChange={this.onChangeQty}/>
-        </label>
         <select className="menu-select" onChange={this.onChangeSize} value={this.state.value}>
           {this.props.dataPrice.map(function (result, id) {
             return <option key={id}>{result[0]} / {result[1]} (g)</option>
