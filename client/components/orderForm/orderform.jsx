@@ -25,7 +25,7 @@ OrderForm = React.createClass({
             <div className="col">
               <ul className="list">
                 {cart.map(function (result, id) {
-                  return <li key={id}>{result.strainName}</li>
+                  return <li className="item" key={id}>{result.strainName} {result.size[0]} / {result.size[1]} <span className="badge badge-balanced">{result.qty}</span></li>
                 })}
               </ul>
             </div>

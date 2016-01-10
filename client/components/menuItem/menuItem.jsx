@@ -8,12 +8,6 @@ MenuItem = React.createClass({
     }
   },
 
-  componentDidMount() {
-    var price = _.first(this.props.data.price[0]);
-    var qty = this.props.data.price[0][1];
-    this.updateOnChange(`${price} / ${qty} (g)`);
-  },
-
   updateOnChange(value) {
     this.setState({selected: value})
   },
