@@ -1,7 +1,6 @@
 OrderForm = React.createClass({
 
   getInitialState() {
-
     console.log(cartItem);
 
     return {
@@ -14,6 +13,10 @@ OrderForm = React.createClass({
     console.log('hello')
   },
 
+  removeItem() {
+    console.log('remove')
+  },
+
   render() {
     return (
       <div className="padding ionic-body">
@@ -24,11 +27,19 @@ OrderForm = React.createClass({
           <h1>Cart</h1>
           <div className="row">
             <div className="col">
-              <ul className="list">
-                {this.state.data.map(function (result, id) {
-                  return <li className="item" key={id}>{result.strainName} {result.size[0]} / {result.size[1]} <span className="badge badge-balanced">{result.qty}</span></li>
-                })}
-              </ul>
+              {this.state.data.map(function (result, id) {
+                return (
+                  <div className="card" key={id}>
+                    <div className="item">{result.strainName}
+                      <span className="badge badge-balanced">{result.qty}</span>
+                    </div>
+                    <div className="item">
+                      <div>{result.size[0]} / {result.size[1]}</div>
+                      <button className="plus-button pull-right ion-minus-circled button button-outline button-assertive" onClick={this.removeItem}> </button>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
           </div>
           <div className="row">

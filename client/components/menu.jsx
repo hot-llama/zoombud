@@ -30,7 +30,7 @@ Menu = React.createClass({
   },
 
   render() {
-		var menu = this.state.menu;
+		let menu = this.state.menu;
 
 		return (
 			<div className="padding ionic-body">
