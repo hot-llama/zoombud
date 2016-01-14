@@ -29,7 +29,7 @@ MenuItem = React.createClass({
   },
 
   render() {
-    var toggledClass = this.state.isToggled ? 'isActive' : '';
+    let toggledClass = this.state.isToggled ? 'isActive' : '';
 
     return (
       <div className={`menuItem ${toggledClass}`}>

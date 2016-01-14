@@ -1,6 +1,6 @@
 StrainDetails = React.createClass({
 	render() {
-		var thumbnail = _.pluck(this.props.dataDetails.photos, 'thumb');
+		let thumbnail = _.pluck(this.props.dataDetails.photos, 'thumb');
 
 		return (
 			<div className="list card c-strain-card">
