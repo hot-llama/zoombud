@@ -1,20 +1,23 @@
 OrderForm = React.createClass({
 
   getInitialState() {
-    console.log(cartItem);
-
     return {
       data: cartItem
     }
-
   },
 
   order(e) {
-    console.log('hello')
   },
 
-  removeItem() {
-    console.log('remove')
+  removeItem(e) {
+    var newdata = parseInt(e.target.value, 10);
+    this.setState((state) => {
+      this.state.data.splice(newdata, 1);
+      return {
+        data: this.state.data
+      }
+    });
+
   },
 
   render() {
@@ -35,11 +38,11 @@ OrderForm = React.createClass({
                     </div>
                     <div className="item">
                       <div>{result.size[0]} / {result.size[1]}</div>
-                      <button className="plus-button pull-right ion-minus-circled button button-outline button-assertive" onClick={this.removeItem}> </button>
+                      <button className="plus-button pull-right ion-minus-circled button button-outline button-assertive" onClick={this.removeItem} value={id}> </button>
                     </div>
                   </div>
                 )
-              })}
+              }, this)}
             </div>
           </div>
           <div className="row">
