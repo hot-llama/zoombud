@@ -31,6 +31,8 @@ MenuItem = React.createClass({
   render() {
     let toggledClass = this.state.isToggled ? 'isActive' : '';
 
+    console.log(this.props.itemsCount);
+
     return (
       <div className={`menuItem ${toggledClass}`}>
         <label className={`item item-input item-select`}>

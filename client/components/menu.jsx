@@ -3,7 +3,7 @@ Menu = React.createClass({
 	getInitialState() {
 		return {
 			menu: [],
-			modal: false
+			itemsCount: 0
 		};
 	},
 
@@ -16,33 +16,17 @@ Menu = React.createClass({
 		});
 	},
 
-  ionModal(tab) {
-    this.setState({
-      modal: (
-        <IonModal>
-          <div className="h1 title">{tab}</div>
-          <button onClick={ () => this.setState({modal:false}) } className="button button-icon active">
-            <i className="icon ion-ios-close-empty"> </i>
-          </button>
-        </IonModal>
-      )
-    })
-  },
-
   render() {
 		let menu = this.state.menu;
-
+		let items = this.state.itemsCount;
 		return (
 			<div className="padding ionic-body">
-        {this.state.modal}
-        <MenuHeader />
-
+        <MenuHeader itemsCount={items} />
 				<div className="content-wrapper">
 					<div className="content">
 						<div className="row">
 							<div className="col">
-								<button onClick={this.ionModal.bind(null, this)}>Test</button>
-								<MenuList menu={menu} />
+								<MenuList menu={menu} itemsCount={items} />
 							</div>
 						</div>
 						<div className="row">
