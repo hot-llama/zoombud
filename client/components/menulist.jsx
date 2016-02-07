@@ -3,7 +3,7 @@ MenuList = React.createClass({
     return (
       <div className="list">
         {this.props.menu.map(function (result, id) {
-          return <MenuItem key={id} data={result} itemsCount={this.props.itemsCount} />
+          return <MenuItem key={id} data={result}  />
         }, this)}
       </div>
     )

@@ -41,14 +41,14 @@ MenuForm = React.createClass({
     e.preventDefault();
 
     cartItem.push(
-        {
-          qty: this.state.qty,
-          size: this.state.size,
-          strainName: this.props.strainName
-        }
+      {
+        qty: this.state.qty,
+        size: this.state.size,
+        strainName: this.props.strainName
+      }
     );
 
-
+    Session.set('count', cartItem.length);
   },
 
   render() {

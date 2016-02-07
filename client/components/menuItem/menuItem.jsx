@@ -31,15 +31,15 @@ MenuItem = React.createClass({
   render() {
     let toggledClass = this.state.isToggled ? 'isActive' : '';
 
-    console.log(this.props.itemsCount);
-
     return (
       <div className={`menuItem ${toggledClass}`}>
         <label className={`item item-input item-select`}>
           <div className="input-label" onClick={this.handleClick}>{this.props.data.name} <span
             className="icon ion-chevron-down"> </span></div>
-          <MenuForm onValueChange={this.updateOnChange} dataPrice={this.props.data.price}
-                    strainName={this.props.data.name} />
+          <MenuForm onValueChange={this.updateOnChange}
+            dataPrice={this.props.data.price}
+            strainName={this.props.data.name}
+           />
         </label>
         <StrainDetails dataType={this.props.data.type} dataDetails={this.state.strainDetails}/>
       </div>

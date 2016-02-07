@@ -2,8 +2,7 @@ Menu = React.createClass({
 
 	getInitialState() {
 		return {
-			menu: [],
-			itemsCount: 0
+			menu: []
 		};
 	},
 
@@ -18,15 +17,14 @@ Menu = React.createClass({
 
   render() {
 		let menu = this.state.menu;
-		let items = this.state.itemsCount;
 		return (
 			<div className="padding ionic-body">
-        <MenuHeader itemsCount={items} />
+        <MenuHeader />
 				<div className="content-wrapper">
 					<div className="content">
 						<div className="row">
 							<div className="col">
-								<MenuList menu={menu} itemsCount={items} />
+								<MenuList menu={menu} />
 							</div>
 						</div>
 						<div className="row">
