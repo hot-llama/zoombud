@@ -1,14 +1,24 @@
 MenuHeader = React.createClass({
 
+  mixins: [ReactMeteorData],
+
   getInitialState() {
     return {
       data: cartItem
     }
   },
 
+  getMeteorData() {
+    return {
+      cart: Cart.find({}).count()
+    }
+  },
+
   render() {
 
-    var itemCount = Session.get('count');
+    var itemCount = this.data.cart;
+
+    console.log(itemCount);
 
     return (
       <div className="bar bar-header">

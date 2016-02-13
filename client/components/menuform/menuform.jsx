@@ -40,13 +40,15 @@ MenuForm = React.createClass({
   addToCart(e) {
     e.preventDefault();
 
-    cartItem.push(
-      {
-        qty: this.state.qty,
-        size: this.state.size,
-        strainName: this.props.strainName
-      }
-    );
+    Meteor.call('addCartItem', this.state.qty, this.state.size, this.props.strainName);
+
+    //cartItem.push(
+    //  {
+    //    qty: this.state.qty,
+    //    size: this.state.size,
+    //    strainName: this.props.strainName
+    //  }
+    //);
 
     Session.set('count', cartItem.length);
   },
