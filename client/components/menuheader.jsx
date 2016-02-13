@@ -18,8 +18,6 @@ MenuHeader = React.createClass({
 
     var itemCount = this.data.cart;
 
-    console.log(itemCount);
-
     return (
       <div className="bar bar-header">
         <UserAccount  />

@@ -1,9 +1,18 @@
 OrderForm = React.createClass({
 
+  mixins: [ReactMeteorData],
+
   getInitialState() {
     return {
       data: cartItem
     }
+  },
+
+  getMeteorData() {
+    let cart = Meteor.subscribe('Cart');
+    return {
+      cart: Cart.find({}).fetch()
+    };
   },
 
   order(e) {
@@ -21,6 +30,8 @@ OrderForm = React.createClass({
   },
 
   render() {
+
+
     return (
       <div className="padding ionic-body">
         <MenuHeader />
@@ -30,10 +41,10 @@ OrderForm = React.createClass({
           <h1>Cart</h1>
           <div className="row">
             <div className="col">
-              {this.state.data.map(function (result, id) {
+              {this.data.cart.map(function (result, id) {
                 return (
                   <div className="card" key={id}>
-                    <div className="item">{result.strainName}
+                    <div className="item">{result.strain}
                       <span className="badge badge-balanced">{result.qty}</span>
                     </div>
                     <div className="item">
