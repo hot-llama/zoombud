@@ -46,7 +46,9 @@ Meteor.methods({
     });
   },
 
-
+  removeCartItem(item) {
+    Cart.remove(item);
+  },
 
   sendOrder(name, qty, size, addr) {
 

@@ -56,8 +56,6 @@ MenuForm = React.createClass({
 
   render() {
 
-    console.log(this.props);
-
     return (
       <div className="menuForm">
         <select className="menu-select" onChange={this.onChangeSize} value={this.state.value}>

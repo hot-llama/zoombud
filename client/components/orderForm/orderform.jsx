@@ -15,18 +15,8 @@ OrderForm = React.createClass({
     };
   },
 
-  order(e) {
-  },
-
   removeItem(e) {
-    var newdata = parseInt(e.target.value, 10);
-    this.setState((state) => {
-      this.state.data.splice(newdata, 1);
-      return {
-        data: this.state.data
-      }
-    });
-
+    Meteor.call('removeCartItem', e.target.value);
   },
 
   render() {
@@ -49,7 +39,7 @@ OrderForm = React.createClass({
                     </div>
                     <div className="item">
                       <div>{result.size[0]} / {result.size[1]}</div>
-                      <button className="plus-button pull-right ion-minus-circled button button-outline button-assertive" onClick={this.removeItem} value={id}> </button>
+                      <button className="plus-button pull-right ion-minus-circled button button-outline button-assertive" onClick={this.removeItem} value={result._id}> </button>
                     </div>
                   </div>
                 )
