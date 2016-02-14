@@ -10,7 +10,7 @@ MenuForm = React.createClass({
   getInitialState() {
     let price = _.first(this.props.dataPrice[0]);
     let qty = this.props.dataPrice[0][1];
-    let strainName = this.props.strainName[0];
+    let strainName = this.props.strainName;
 
     return {
       qty : 1,

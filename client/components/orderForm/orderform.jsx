@@ -1,12 +1,6 @@
 OrderForm = React.createClass({
   mixins: [ReactMeteorData],
 
-  getInitialState() {
-    return {
-      data: cartItem
-    }
-  },
-
   getMeteorData() {
     Meteor.subscribe('Cart');
 
