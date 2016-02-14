@@ -1,5 +1,4 @@
 OrderForm = React.createClass({
-
   mixins: [ReactMeteorData],
 
   getInitialState() {
@@ -9,7 +8,8 @@ OrderForm = React.createClass({
   },
 
   getMeteorData() {
-    let cart = Meteor.subscribe('Cart');
+    Meteor.subscribe('Cart');
+
     return {
       cart: Cart.find({}).fetch()
     };
@@ -20,8 +20,6 @@ OrderForm = React.createClass({
   },
 
   render() {
-
-
     return (
       <div className="padding ionic-body">
         <MenuHeader />

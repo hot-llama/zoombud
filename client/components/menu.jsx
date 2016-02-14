@@ -1,5 +1,4 @@
 Menu = React.createClass({
-
 	getInitialState() {
 		return {
 			menu: []

@@ -3,8 +3,8 @@ MenuForm = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData() {
-    let cart = Meteor.subscribe('Cart');
-    return {cart};
+    Meteor.subscribe('Cart');
+    return {};
   },
 
   getInitialState() {
@@ -40,18 +40,7 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
-
     Meteor.call('addCartItem', this.state.qty, this.state.size, this.state.strainName);
-
-    //cartItem.push(
-    //  {
-    //    qty: this.state.qty,
-    //    size: this.state.size,
-    //    strainName: this.props.strainName
-    //  }
-    //);
-
-    Session.set('count', cartItem.length);
   },
 
   render() {

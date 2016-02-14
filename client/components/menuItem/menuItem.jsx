@@ -1,5 +1,4 @@
 MenuItem = React.createClass({
-
   getInitialState() {
     return {
       isToggled    : false,

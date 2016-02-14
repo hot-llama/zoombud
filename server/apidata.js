@@ -1,7 +1,3 @@
-Meteor.publish('Orders', function () {
-  return Orders.find(); // Publishes the data
-}); // end publish
-
 Meteor.publish('Cart', function() {
   return Cart.find(); //Publishes Cart
 });
@@ -46,12 +42,15 @@ Meteor.methods({
     });
   },
 
+  /**
+   * Removes an item from the cart collection
+   * @param item - collection id of item
+   */
   removeCartItem(item) {
     Cart.remove(item);
   },
 
   sendOrder(name, qty, size, addr) {
-
     return HTTP.call(
       "POST",
       `https://api.twilio.com/2010-04-01/Accounts/${Meteor.settings.TWILIO_ACCOUNT_SID}/Messages`, {
