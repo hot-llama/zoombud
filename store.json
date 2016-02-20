@@ -4,6 +4,7 @@
       "name": "sour diesel",
       "type": "sativa",
       "category": "flowers",
+      "SKU": "supahfly0001",
       "price": [
         [
           50,
@@ -23,6 +24,7 @@
       "name": "qrazy train",
       "type": "hybrid",
       "category": "flowers",
+      "SKU": "supahfly0002",
       "price": [
         [
           50,
@@ -42,6 +44,7 @@
       "name": "cinex",
       "type": "sativa",
       "category": "flowers",
+      "SKU": "supahfly0003",
       "price": [
         [
           60,
@@ -61,6 +64,7 @@
       "name": "alaskan thunderfuck",
       "type": "sativa",
       "category": "flowers",
+      "SKU": "supahfly0004",
       "price": [
         [
           60,
@@ -80,6 +84,7 @@
       "name": "girl scout cookies",
       "type": "hybrid",
       "category": "flowers",
+      "SKU": "supahfly0005",
       "price": [
         [
           70,
@@ -99,6 +104,7 @@
       "name": "cinex",
       "type": "sativa",
       "category": "flowers",
+      "SKU": "supahfly0006",
       "price": [
         [
           80,
@@ -119,6 +125,7 @@
       "formfactor": "cartridge",
       "type": "indica",
       "category": "concentrates",
+      "SKU": "supahfly0007",
       "price": [
         [
           40,
@@ -139,6 +146,7 @@
       "formfactor": "cartridge",
       "type": "indica",
       "category": "concentrates",
+      "SKU": "supahfly0008",
       "price": [
         [
           40,
@@ -159,6 +167,7 @@
       "formfactor": "cartridge",
       "type": "hybrid",
       "category": "concentrates",
+      "SKU": "supahfly0009",
       "price": [
         [
           40,
@@ -179,6 +188,7 @@
       "formfactor": "c02",
       "type": "hybrid",
       "category": "concentrates",
+      "SKU": "supahfly0010",
       "price": [
         [
           35,
@@ -199,6 +209,7 @@
       "formfactor": "amber",
       "type": "sativa",
       "category": "concentrates",
+      "SKU": "supahfly0011",
       "price": [
         [
           35,
@@ -219,6 +230,7 @@
       "formfactor": "amber",
       "type": "indica",
       "category": "concentrates",
+      "SKU": "supahfly0012",
       "price": [
         [
           35,
@@ -238,6 +250,7 @@
       "name": "Cannabee Gummy Bears",
       "type": "Rick Simpson Oil",
       "category": "edibles",
+      "SKU": "supahfly0013",
       "price": [
         [
           20,
@@ -249,6 +262,7 @@
       "name": "High Chews",
       "type": "Unknown",
       "category": "edibles",
+      "SKU": "supahfly0014",
       "price": [
         [
           30,

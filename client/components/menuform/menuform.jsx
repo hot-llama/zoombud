@@ -44,6 +44,7 @@ MenuForm = React.createClass({
   },
 
   render() {
+    console.log(this.props.sku);
 
     return (
       <div className="menuForm">

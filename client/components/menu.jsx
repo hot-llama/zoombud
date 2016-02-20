@@ -15,6 +15,7 @@ Menu = React.createClass({
 	},
 
   render() {
+		console.log(this.state.menu.SKU);
 		let menu = this.state.menu;
 		return (
 			<div className="padding ionic-body">
