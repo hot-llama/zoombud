@@ -32,6 +32,7 @@ Meteor.methods({
    * @param qty - quantity of awesome
    * @param size - amount of awesome
    * @param strain - strain name of item
+   * @param sku - the SKU of the item
    */
   addCartItem(qty, size, strain, sku) {
     Cart.insert({

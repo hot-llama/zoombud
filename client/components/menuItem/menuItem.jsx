@@ -38,6 +38,7 @@ MenuItem = React.createClass({
           <MenuForm onValueChange={this.updateOnChange}
             dataPrice={this.props.data.price}
             strainName={this.props.data.name}
+            SKU={this.props.data.SKU}
            />
         </label>
         <StrainDetails dataType={this.props.data.type} dataDetails={this.state.strainDetails}/>

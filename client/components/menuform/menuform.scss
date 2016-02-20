@@ -1,5 +1,6 @@
 .item-select select.menu-select {
   position: relative;
+  max-width: 100%;
 }
 
 .item-select:after {
@@ -8,6 +9,6 @@
 }
 
 .menuForm {
-  align-self: flex-end;
+  align-self: center;
   display: flex;
 }

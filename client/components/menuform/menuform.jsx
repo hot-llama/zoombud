@@ -10,12 +10,10 @@ MenuForm = React.createClass({
   getInitialState() {
     let price = _.first(this.props.dataPrice[0]);
     let qty = this.props.dataPrice[0][1];
-    let strainName = this.props.strainName;
 
     return {
       qty : 1,
-      size: [price, qty],
-      strainName: strainName
+      size: [price, qty]
     };
   },
 
@@ -40,12 +38,10 @@ MenuForm = React.createClass({
 
   addToCart(e) {
     e.preventDefault();
-    Meteor.call('addCartItem', this.state.qty, this.state.size, this.state.strainName);
+    Meteor.call('addCartItem', this.state.qty, this.state.size, this.props.strainName, this.props.SKU);
   },
 
   render() {
-    console.log(this.props.sku);
-
     return (
       <div className="menuForm">
         <select className="menu-select" onChange={this.onChangeSize} value={this.state.value}>

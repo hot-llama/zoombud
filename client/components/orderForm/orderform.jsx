@@ -13,7 +13,21 @@ OrderForm = React.createClass({
     Meteor.call('removeCartItem', e.target.value);
   },
 
+  groupItems() {
+
+  },
+
+  itemCount() {
+
+  },
+
   render() {
+
+    {var newgroup = _.groupBy(this.data.cart,"SKU");}
+    var test = _.forIn(newgroup,(value, key) => { return value.length });
+    console.log(test);
+
+
     return (
       <div className="padding ionic-body">
         <MenuHeader />
@@ -26,12 +40,12 @@ OrderForm = React.createClass({
               {this.data.cart.map(function (result, id) {
                 return (
                   <div className="card" key={id}>
-                    <div className="item">{result.strain}
+                    <div className="item">{result.strain} {result.SKU}
                       <span className="badge badge-balanced">{result.qty}</span>
                     </div>
                     <div className="item">
                       <div>{result.size[0]} / {result.size[1]}</div>
-                      <button className="plus-button pull-right ion-minus-circled button button-outline button-assertive" onClick={this.removeItem} value={result._id}> </button>
+                      <button className="plus-button ion-minus-circled button button-outline button-assertive" onClick={this.removeItem} value={result._id}> </button>
                     </div>
                   </div>
                 )
