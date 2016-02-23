@@ -1,15 +1,21 @@
 StrainDetails = React.createClass({
 	render() {
-		let thumbnail = _.pluck(this.props.dataDetails.photos, 'thumb');
 
-		return (
+    if(!this.props.dataDetails) {
+      return(
+        <div>Loading...</div>
+      )
+    }
+
+    let thumbnail = _.pluck(this.props.dataDetails.photos, 'thumb')[0];
+    return (
 			<div className="list card c-strain-card">
 				<div className="item item-avatar c-strain-card__details stable-bg">
-					<img src={thumbnail[0]} alt="leafly image"/>
+					<StrainThumb thumbsrc={thumbnail} />
 					<p>{this.props.dataDetails.category}</p>
 					<p>{this.props.dataDetails.rating} <img className="rating" src={this.props.dataDetails.starImage}/></p>
 				</div>
 			</div>
 		)
 	}
-})
+});
