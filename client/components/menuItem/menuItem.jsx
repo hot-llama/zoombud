@@ -19,7 +19,7 @@ MenuItem = React.createClass({
   },
 
   getStrainDetails() {
-    Meteor.call('getDetails', 'sour-diesel', (err, details) => {
+    Meteor.call('getDetails', this.props.data.name, (err, details) => {
       if (err) {
         throw new Meteor.Error('Details are a bitch', err);
       }

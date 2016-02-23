@@ -1,12 +1,5 @@
 StrainDetails = React.createClass({
 	render() {
-
-    if(!this.props.dataDetails) {
-      return(
-        <div>Loading...</div>
-      )
-    }
-
     let thumbnail = _.pluck(this.props.dataDetails.photos, 'thumb')[0];
     return (
 			<div className="list card c-strain-card">

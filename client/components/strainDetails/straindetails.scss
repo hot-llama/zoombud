@@ -7,6 +7,10 @@
   position:absolute;
 }
 
+.c-strain-card__details {
+  align-items: center;
+}
+
 .isActive .c-strain-card {
   Transform: scaleY(1);
   position: relative;
@@ -18,4 +22,9 @@
 
 .rating {
   max-height: 1em;
+  margin-left: 1em;
+}
+
+p {
+  margin-right: 1em;
 }
