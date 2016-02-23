@@ -2,6 +2,12 @@
     display: flex;
     flex: 1;
     flex-direction: row;
+
+
+}
+
+.item .badge {
+    right: 16px;
 }
 
 .menuItem.isActive {
@@ -16,11 +22,9 @@
     display: flex;
     flex: 1;
 }
+
 .plus-button {
-    //position: absolute;
-    //top: 50%;
-    //margin-top: -12px;
-    right: 16px;
+    right: 10px;
     min-width: auto;
     min-height: auto;
     line-height: 1em;
@@ -30,5 +34,13 @@
 }
 
 .ion-minus-circled {
-    margin-top: -12px;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -.5em;
 }
+
+.ion-chevron-down {
+  margin-left: .5em;
+}
+
