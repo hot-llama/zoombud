@@ -18,8 +18,8 @@
 }
 .plus-button {
     //position: absolute;
-    top: 50%;
-    margin-top: -12px;
+    //top: 50%;
+    //margin-top: -12px;
     right: 16px;
     min-width: auto;
     min-height: auto;
@@ -27,4 +27,8 @@
     border: 0;
     padding: 0 0;
     font-size: 1.25em;
+}
+
+.ion-minus-circled {
+    margin-top: -12px;
 }

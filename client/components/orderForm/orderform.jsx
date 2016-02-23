@@ -45,7 +45,7 @@ OrderForm = React.createClass({
                     </div>
                     <div className="item">
                       <div>{result.size[0]} / {result.size[1]}</div>
-                      <button className="plus-button ion-minus-circled button button-outline button-assertive" onClick={this.removeItem} value={result._id}> </button>
+                      <button className="plus-button ion-minus-circled button button-outline button-assertive pull-right" onClick={this.removeItem} value={result._id}> </button>
                     </div>
                   </div>
                 )
