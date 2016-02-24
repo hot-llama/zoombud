@@ -18,16 +18,26 @@ OrderForm = React.createClass({
   },
 
   itemCount() {
+    let cartItems = _.groupBy(this.data.cart,"SKU");
 
+    _.forIn(cartItems, function (val, prop) {
+      if (cartItems.hasOwnProperty(prop)) {
+        console.log('PROP - ', prop);
+        console.log('FIRSTPROP - ', cartItems[prop][0]);
+        console.log('LENGTH - ', cartItems[prop].length);
+      }
+    });
+
+    //for (let prop in cartItems) {
+    //  if (cartItems.hasOwnProperty(prop)) {
+    //    console.log('PROP - ', prop);
+    //    console.log('FIRSTPROP - ', cartItems[prop][0]);
+    //    console.log('LENGTH - ', cartItems[prop].length);
+    //  }
+    //}
   },
 
   render() {
-
-    {var newgroup = _.groupBy(this.data.cart,"SKU");}
-    var test = _.forIn(newgroup,(value, key) => { return value.length });
-    console.log(test);
-
-
     return (
       <div className="padding ionic-body">
         <MenuHeader />
@@ -35,6 +45,9 @@ OrderForm = React.createClass({
         <div className="content-wrapper">
           <a className="button icon-left ion-chevron-left button-clear button-dark" href="/">Back</a>
           <h1>Cart</h1>
+          <div className="row">
+            {this.itemCount()}
+          </div>
           <div className="row">
             <div className="col">
               {this.data.cart.map(function (result, id) {
