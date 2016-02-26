@@ -5,7 +5,8 @@ OrderForm = React.createClass({
     Meteor.subscribe('Cart');
 
     return {
-      cart: Cart.find({}).fetch()
+      cart: Cart.find({}).fetch(),
+      items: []
     };
   },
 
@@ -13,31 +14,25 @@ OrderForm = React.createClass({
     Meteor.call('removeCartItem', e.target.value);
   },
 
-  groupItems() {
-
-  },
-
+  /**
+   * Groups the cart by SKU and pushes it to items array
+   */
   itemCount() {
     let cartItems = _.groupBy(this.data.cart,"SKU");
 
     _.forIn(cartItems, function (val, prop) {
       if (cartItems.hasOwnProperty(prop)) {
-        console.log('PROP - ', prop);
-        console.log('FIRSTPROP - ', cartItems[prop][0]);
-        console.log('LENGTH - ', cartItems[prop].length);
+        //console.log('PROP - ', prop);
+        //console.log('FIRSTPROP - ', cartItems[prop][0]);
+        //console.log('LENGTH - ', cartItems[prop].length);
+        this.data.items.push(cartItems[prop][0]);
       }
-    });
-
-    //for (let prop in cartItems) {
-    //  if (cartItems.hasOwnProperty(prop)) {
-    //    console.log('PROP - ', prop);
-    //    console.log('FIRSTPROP - ', cartItems[prop][0]);
-    //    console.log('LENGTH - ', cartItems[prop].length);
-    //  }
-    //}
+    }, this);
   },
 
   render() {
+    //@TODO - Update the badge to reflect quantity
+
     return (
       <div className="padding ionic-body">
         <MenuHeader />
@@ -50,7 +45,7 @@ OrderForm = React.createClass({
           </div>
           <div className="row">
             <div className="col">
-              {this.data.cart.map(function (result, id) {
+              {this.data.items.map(function (result, id) {
                 return (
                   <div className="card" key={id}>
                     <div className="item">{result.strain} {result.SKU}
