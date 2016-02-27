@@ -6,7 +6,8 @@ OrderForm = React.createClass({
 
     return {
       cart: Cart.find({}).fetch(),
-      items: []
+      items: [],
+      count: []
     };
   },
 
@@ -22,12 +23,13 @@ OrderForm = React.createClass({
 
     _.forIn(cartItems, function (val, prop) {
       if (cartItems.hasOwnProperty(prop)) {
-        //console.log('PROP - ', prop);
-        //console.log('FIRSTPROP - ', cartItems[prop][0]);
-        //console.log('LENGTH - ', cartItems[prop].length);
+        this.data.count.push(cartItems[prop].length);
         this.data.items.push(cartItems[prop][0]);
       }
     }, this);
+    console.log("cartItems - ", cartItems);
+    console.log("items - ", this.data.items);
+    console.log("count - ", this.data.count);
   },
 
   render() {
@@ -48,8 +50,8 @@ OrderForm = React.createClass({
               {this.data.items.map(function (result, id) {
                 return (
                   <div className="card" key={id}>
-                    <div className="item">{result.strain} {result.SKU}
-                      <span className="badge badge-balanced">{result.qty}</span>
+                    <div className="item">{result.strain}
+                      <span className="badge badge-balanced">{this.data.count[id]}</span>
                     </div>
                     <div className="item">
                       <div>{result.size[0]} / {result.size[1]}</div>
