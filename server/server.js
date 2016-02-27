@@ -84,4 +84,4 @@ Meteor.methods({
 /**
  * Connects app to the Kadira perf monitoring
  */
-Kadira.connect(Meteor.settings.KADIRA_ID, Meteor.settings.KADIRA_KEY);
+//Kadira.connect(Meteor.settings.KADIRA_ID, Meteor.settings.KADIRA_KEY);
