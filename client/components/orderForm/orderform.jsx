@@ -24,6 +24,15 @@ OrderForm = React.createClass({
     Meteor.call('removeCartItem', e.target.value);
   },
 
+  prepOrder() {
+    let order = {};
+    _.map(this.data.items, function() {
+
+    });
+    console.log(this.data.items);
+    //Meteor.call('sendOrder', this.data.items, this.data.count)
+  },
+
   render() {
     return (
       <div className="padding ionic-body">
@@ -51,7 +60,7 @@ OrderForm = React.createClass({
           </div>
           <div className="row">
             <div className="col">
-              <button className="button button-balanced button-full" onClick={this.order}>Send Order</button>
+              <button className="button button-balanced button-full" onClick={this.prepOrder}>Send Order</button>
             </div>
           </div>
         </div>
